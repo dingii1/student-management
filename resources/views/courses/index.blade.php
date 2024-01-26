@@ -5,7 +5,7 @@
     <h1>Courses</h1>
     <a href="{{ route('courses.create') }}" class="btn btn-primary mb-3">Create Course</a>
     @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success" id="success-alert">{{ session('success') }}</div>
     @endif
 
     <table class="table table-striped">
