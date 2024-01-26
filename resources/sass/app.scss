@@ -6,3 +6,18 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+a, 
+p, 
+span, 
+h1, 
+h2, 
+h3, 
+li, 
+label {
+    color: white;
+}
+
+.card label {
+    color:var(--bs-card-cap-color);
+}

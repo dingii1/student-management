@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentGradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,8 +43,6 @@ Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('cours
 Route::put('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
-// Routes for StudentCourse
-Route::resource('student-courses', StudentCourseController::class);
-
-// Routes for StudentGrade
-Route::resource('student-grades', StudentGradeController::class);
+// Create a grade for a student
+Route::get('/grades/create/{student}', [StudentGradeController::class, 'create'])->name('grades.create');
+Route::post('/grades/store', [StudentGradeController::class, 'store'])->name('grades.store');
